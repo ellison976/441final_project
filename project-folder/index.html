@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Home - BHP Group Limited (ASX: BHP)</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Consistent Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="/images/logo.jpg" alt="BHP Logo" width="120" height="60">
+        </div>
+        <nav class="nav-main">
+            <a href="/index.html">Home</a>
+            <a href="/html/products.html">Products</a>
+            <a href="/html/cart.html" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </a>
+            <a href="/html/admin.html">Admin</a>
+            <a href="/html/about.html">About Us</a>
+            <a href="/html/support.html">Support</a>
+            <a href="/html/feedback.html">Feedback</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Hero Section with video -->
+        <section class="hero-section">
+            <video class="hero-video" autoplay loop muted playsinline webkit-playsinline poster="/images/hero-fallback.jpg">
+                <source src="/images/homepage-loop-compile-230523.mp4" type="video/mp4">
+                Your browser does not support video playback.
+            </video>
+            <div class="hero-content">
+                <h1>Welcome to BHP (ASX: BHP) Online Store</h1>
+                <p>Global leader in natural resources: mining, energy & metals - Your trusted partner for industrial commodities</p>
+                <a href="/html/products.html" class="cta-btn">Shop Now →</a>
+            </div>
+        </section>
+
+        <!-- Banner Carousel -->
+        <section class="carousel" id="carousel">
+            <div class="carousel-slides">
+                <div class="carousel-slide">
+                    <img src="/images/banner.jpg" alt="BHP Iron Ore Operations" width="1200" height="400">
+                </div>
+                <div class="carousel-slide">
+                    <img src="/images/homepage-mike-henry-quote.jpg" alt="BHP Sustainable Mining" width="1200" height="400">
+                </div>
+                <div class="carousel-slide">
+                    <img src="/images/191114_escondidacopper.jpg" alt="BHP Global Logistics" width="1200" height="400">
+                </div>
+            </div>
+            <div class="carousel-indicators">
+                <button class="carousel-indicator active" data-index="0"></button>
+                <button class="carousel-indicator" data-index="1"></button>
+                <button class="carousel-indicator" data-index="2"></button>
+            </div>
+        </section>
+
+        <!-- Company Info -->
+        <section class="company-info">
+            <h2>BHP Group Limited (ASX: BHP)</h2>
+            <p class="mission-statement">Our mission is to bring people and resources together to build a better world. We aim to deliver long-term value to our shareholders, customers, employees, and communities by operating safely, sustainably, and responsibly.</p>
+            
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <i class="fas fa-shield-halved"></i>
+                    <h3>Safety First</h3>
+                    <p>Zero harm commitment across all our global operations</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Sustainability</h3>
+                    <p>Leading the transition to low-carbon natural resources</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Global Reach</h3>
+                    <p>Operations across Australia, Americas, Asia and Europe</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured-section">
+            <h2>Featured Products</h2>
+            <div class="featured-grid" id="featured-products"></div>
+        </section>
+    </div>
+
+    <!-- Consistent Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="student-info">
+                <p>Student Name: Ellison | Student ID: 243190737 | Class: IT1</p>
+                <p>ICTWEB441 Student Project - BHP Ecommerce Website</p>
+            </div>
+            <div class="copyright">
+                © 2026 ICTWEB441 Student Project - All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Detail Modal -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeProductModal()">&times;</span>
+            <img src="" alt="" id="modalProductImg" onclick="openLightbox()">
+            <h3 id="modalProductName"></h3>
+            <p><strong>Category:</strong> <span id="modalProductCategory"></span></p>
+            <p><strong>Price:</strong> <span id="modalProductPrice"></span></p>
+            <p><strong>Stock:</strong> <span id="modalProductStock"></span></p>
+            <p><strong>Description:</strong> <span id="modalProductDesc"></span></p>
+            <button class="add-to-cart-btn" onclick="addToCart(currentModalProductId); closeProductModal();">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <img src="" alt="" id="lightbox-img">
+    </div>
+
+    <!-- Green Toast -->
+    <div class="toast-notification" id="toast-notification">
+        <i class="fas fa-shopping-cart"></i>
+        <span>Added to cart!</span>
+    </div>
+
+
+    <script src="js/global.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/carousel.js"></script>
+
+    <!-- Backup script for video autoplay -->
+    <script>
+        (function() {
+            var video = document.querySelector('.hero-video');
+            if (!video) return;
+            // Force mute and attempt playback
+            video.muted = true;
+            var playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.then(function() {
+                    console.log('Video autoplay started');
+                }).catch(function(error) {
+                    console.log('Video autoplay failed:', error);
+                    // Hide video to avoid blank areas
+                    video.style.opacity = '0';
+                    // If a poster image exists, ensure the background image is visible
+                    if (video.poster) {
+                        var img = document.createElement('img');
+                        img.src = video.poster;
+                        img.style.position = 'absolute';
+                        img.style.top = '0';
+                        img.style.left = '0';
+                        img.style.width = '100%';
+                        img.style.height = '100%';
+                        img.style.objectFit = 'cover';
+                        img.style.zIndex = '1';
+                        video.parentNode.insertBefore(img, video);
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

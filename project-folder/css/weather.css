@@ -1,0 +1,131 @@
+/* ========== Weather widget styling (API integration) ========== */
+.weather-section {
+    margin: 40px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.weather-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    color: #0056b3;
+}
+
+.weather-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 350px;
+    margin: 0 auto;
+    transition: transform 0.2s;
+}
+
+.weather-card:hover {
+    transform: translateY(-2px);
+}
+
+.weather-header {
+    font-weight: bold;
+    color: #0056b3;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.weather-header i {
+    margin-right: 8px;
+}
+
+.weather-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.weather-icon {
+    width: 70px;
+    height: 70px;
+}
+
+.weather-temp {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #1e293b;
+}
+
+.weather-desc {
+    text-transform: capitalize;
+    color: #555;
+    font-size: 1rem;
+}
+
+.weather-details {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0 10px;
+    font-size: 0.9rem;
+    color: #2d3748;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 15px;
+}
+
+.weather-details div {
+    background: #f1f5f9;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.weather-updated {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-top: 12px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 12px;
+}
+
+/* Loading & error states */
+.weather-loading, .weather-error {
+    padding: 30px;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 16px;
+    max-width: 350px;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.weather-loading i, .weather-error i {
+    margin-right: 8px;
+}
+
+.weather-loading {
+    color: #0056b3;
+}
+
+.weather-error {
+    color: #dc3545;
+    background: #fff5f5;
+}
+
+
+@media (max-width: 768px) {
+    .weather-card {
+        max-width: 100%;
+        margin: 0 10px;
+    }
+    .weather-main {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .weather-temp {
+        font-size: 1.8rem;
+    }
+}

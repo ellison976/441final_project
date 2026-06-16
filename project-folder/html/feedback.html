@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Feedback - BHP Group Limited</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="../images/logo.jpg" alt="BHP Logo" width="120" height="60">
+        </div>
+        <nav class="nav-main">
+            <a href="../index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </a>
+            <a href="admin.html">Admin</a>
+            <a href="about.html">About Us</a>
+            <a href="support.html">Support</a>
+            <a href="feedback.html">Feedback</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Share Your Feedback</h1>
+
+        <!-- Feedback Form -->
+        <form id="feedback-form" onsubmit="submitFeedback(event)">
+            <input id="feedback-name" name="feedback-name" placeholder="Your Name" required>
+            <input id="feedback-email" name="feedback-email" type="email" placeholder="Your Email" required>
+            
+            <label>Rating (1-5 Stars)</label>
+            <div class="rating">
+                <input type="radio" name="rating" id="star5" value="5">
+                <label for="star5">★</label>
+                <input type="radio" name="rating" id="star4" value="4">
+                <label for="star4">★</label>
+                <input type="radio" name="rating" id="star3" value="3">
+                <label for="star3">★</label>
+                <input type="radio" name="rating" id="star2" value="2">
+                <label for="star2">★</label>
+                <input type="radio" name="rating" id="star1" value="1">
+                <label for="star1">★</label>
+            </div>
+            
+            <textarea id="feedback-comment" name="feedback-comment" placeholder="Your Feedback" rows="5" required></textarea>
+            <button type="submit">Submit Feedback</button>
+        </form>
+
+        <!-- Feedback List -->
+        <div id="feedback-list">
+            <h2>Customer Reviews</h2>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="student-info">
+                <p>Student Name: Ellison | Student ID: 243190737 | Class: IT1</p>
+                <p>ICTWEB441 Student Project - BHP Ecommerce Website</p>
+            </div>
+            <div class="copyright">
+                © 2026 ICTWEB441 Student Project - All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast-notification" id="toast-notification">
+        <i class="fas fa-heart"></i>
+        <span></span>
+    </div>
+
+<script src="../js/global.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/products.js"></script>
+<script src="../js/cart.js"></script>
+<script src="../js/feedback.js"></script>
+<script src="../js/session-storage.js"></script>
+</body>
+</html>

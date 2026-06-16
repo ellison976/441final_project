@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - BHP Group Limited</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/weather.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="../images/logo.jpg" alt="BHP Logo" width="120" height="60">
+        </div>
+        <nav class="nav-main">
+            <a href="../index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </a>
+            <a href="admin.html">Admin</a>
+            <a href="about.html">About Us</a>
+            <a href="support.html">Support</a>
+            <a href="feedback.html">Feedback</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Help & Support</h1>
+        <!-- Weather widget -->
+        <section class="weather-section">
+            <h2>Melbourne Headquarters Weather</h2>
+            <div id="weather-widget"></div>
+        </section>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>support@bhp-store.com</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <h3>Phone</h3>
+                <p>+61 1800 123 456</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Address</h3>
+                <p>171 Collins Street, Melbourne VIC 3000, Australia</p>
+            </div>
+        </div>
+
+        <!-- FAQs -->
+        <div class="faqs">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h4>Q: How do I place an order?</h4>
+                <p>A: Browse our products, add items to your cart, and proceed to checkout. You will need to create a customer account to complete your purchase.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q: What payment methods do you accept?</h4>
+                <p>A: We accept all major credit cards (Visa, Mastercard, American Express) and bank transfers for bulk orders.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q: How long does shipping take?</h4>
+                <p>A: Standard shipping takes 5-7 business days within Australia. International shipping times vary by destination.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q: Can I return a product?</h4>
+                <p>A: Returns are accepted within 30 days of delivery for unused products in their original packaging. Please contact our support team to initiate a return.</p>
+            </div>
+        </div>
+
+        <!-- Support Flow Chart -->
+        <div class="about-section">
+            <h2>Our Support Process</h2>
+            <img id="flowchart-img" src="../images/support-flowchart.jpg" alt="Support Flowchart" width="800" height="600">
+        </div>
+
+        <!-- Support Form -->
+        <div class="about-section">
+            <h2>Contact Us</h2>
+            <form id="support-form" onsubmit="submitSupport(event)">
+                <input id="support-name" name="support-name" placeholder="Your Name" required>
+                <input id="support-email" name="support-email" type="email" placeholder="Your Email" required>
+                <textarea id="support-message" name="support-message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="student-info">
+                <p>Student Name: Ellison | Student ID: 243190737 | Class: IT1</p>
+                <p>ICTWEB441 Student Project - BHP Ecommerce Website</p>
+            </div>
+            <div class="copyright">
+                © 2026 ICTWEB441 Student Project - All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast-notification" id="toast-notification">
+        <i class="fas fa-check-circle"></i>
+        <span></span>
+    </div>
+
+<script src="../js/global.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/products.js"></script>
+<script src="../js/cart.js"></script>
+<script src="../js/support.js"></script>
+<script src="../js/config.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/session-storage.js"></script>
+</body>
+</html>

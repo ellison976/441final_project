@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "name": "62% Iron Ore Fines",
+        "price": 430000,
+        "category": "Mining",
+        "description": "High-grade iron ore fines for steel production",
+        "stock": 10000,
+        "image": "iron_ore.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Metallurgical Coal",
+        "price": 540000,
+        "category": "Energy",
+        "description": "Premium coking coal for metallurgical use",
+        "stock": 8000,
+        "image": "coal.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Copper Concentrate",
+        "price": 320000,
+        "category": "Metals",
+        "description": "High purity copper concentrate for industrial use",
+        "stock": 6000,
+        "image": "copper.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Crude Oil WTI",
+        "price": 320000,
+        "category": "Energy",
+        "description": "West Texas Intermediate crude oil",
+        "stock": 5000,
+        "image": "oil.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Natural Gas",
+        "price": 330000,
+        "category": "Energy",
+        "description": "Natural gas for energy production",
+        "stock": 7000,
+        "image": "gas.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Nickel",
+        "price": 280000,
+        "category": "Metals",
+        "description": "Pure nickel ingots for industrial manufacturing",
+        "stock": 4000,
+        "image": "nickel.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Zinc",
+        "price": 250000,
+        "category": "Metals",
+        "description": "Zinc metal for galvanization and alloy production",
+        "stock": 3500,
+        "image": "zinc.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Thermal Coal",
+        "price": 315000,
+        "category": "Energy",
+        "description": "Thermal coal for power generation",
+        "stock": 9000,
+        "image": "thermal_coal.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Manganese",
+        "price": 220000,
+        "category": "Mining",
+        "description": "Manganese ore for steel alloy production",
+        "stock": 3000,
+        "image": "manganese.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Bauxite",
+        "price": 180000,
+        "category": "Mining",
+        "description": "Bauxite ore for aluminum production",
+        "stock": 12000,
+        "image": "bauxite.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Iron Ore Pellets",
+        "price": 455000,
+        "category": "Mining",
+        "description": "Direct reduction iron ore pellets for blast furnaces",
+        "stock": 8500,
+        "image": "iron_pellets.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Premium Coking Coal",
+        "price": 580000,
+        "category": "Energy",
+        "description": "Ultra-low ash coking coal for high-quality steelmaking",
+        "stock": 4800,
+        "image": "premium_coal.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Copper Cathodes",
+        "price": 345000,
+        "category": "Metals",
+        "description": "LME Grade A copper cathodes for electrical applications",
+        "stock": 4200,
+        "image": "copper_cathode.jpg"
+    },
+    {
+        "id": 14,
+        "name": "Lithium Carbonate",
+        "price": 890000,
+        "category": "Metals",
+        "description": "Battery-grade lithium carbonate for EV and energy storage",
+        "stock": 2500,
+        "image": "lithium.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Aluminum Ingots",
+        "price": 275000,
+        "category": "Metals",
+        "description": "99.7% pure aluminum ingots for construction and packaging",
+        "stock": 5500,
+        "image": "aluminum.jpg"
+    },
+    {
+        "id": 16,
+        "name": "Lead Concentrate",
+        "price": 195000,
+        "category": "Metals",
+        "description": "High-grade lead concentrate for lead-acid battery manufacturing",
+        "stock": 3200,
+        "image": "lead.jpg"
+    },
+    {
+        "id": 17,
+        "name": "Zinc Concentrate",
+        "price": 265000,
+        "category": "Metals",
+        "description": "High-zinc concentrate for smelting and galvanizing industries",
+        "stock": 3800,
+        "image": "zinc_concentrate.jpg"
+    },
+    {
+        "id": 18,
+        "name": "Nickel Sulfate",
+        "price": 310000,
+        "category": "Metals",
+        "description": "Battery-grade nickel sulfate for lithium-ion battery cathodes",
+        "stock": 2100,
+        "image": "nickel_sulfate.jpg"
+    },
+    {
+        "id": 19,
+        "name": "Uranium Oxide (Yellowcake)",
+        "price": 1250000,
+        "category": "Energy",
+        "description": "U3O8 yellowcake for nuclear power generation",
+        "stock": 1200,
+        "image": "uranium.jpg"
+    },
+    {
+        "id": 20,
+        "name": "Potash",
+        "price": 165000,
+        "category": "Mining",
+        "description": "Potassium chloride for agricultural fertilizers and industrial use",
+        "stock": 9500,
+        "image": "potash.jpg"
+    }
+]

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - BHP Group Limited</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="../images/logo.jpg" alt="BHP Logo" width="120" height="60">
+        </div>
+        <nav class="nav-main">
+            <a href="../index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </a>
+            <a href="admin.html">Admin</a>
+            <a href="about.html">About Us</a>
+            <a href="support.html">Support</a>
+            <a href="feedback.html">Feedback</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Your Shopping Cart</h1>
+
+        <!-- Customer Login Prompt -->
+        <div class="login-area">
+            <input id="user" placeholder="Customer Username">
+            <input id="pwd" type="password" placeholder="Password">
+            <button class="login-btn" onclick="tryLogin()">Customer Login</button>
+            <a href="admin.html#registration" class="btn btn-primary">Register New Account</a>
+        </div>
+
+        <!-- Shopping Cart Items -->
+        <div class="cart-section">
+            <h2>Cart Items</h2>
+            <div id="cart-items"></div>
+            
+            <!-- Save For Later -->
+            <div id="saved-later"></div>
+            
+            <!-- Shopping Cart Summary -->
+            <div class="cart-totals">
+                <p>Subtotal: <span id="subtotal">$0.00</span></p>
+                <p>GST (10%): <span id="gst">$0.00</span></p>
+                <p>Shipping: <span id="shipping">$0.00</span></p>
+                <p>Discount: <span id="discount">$0.00</span></p>
+                <p><strong>Total: <span id="total">$0.00</span></strong></p>
+            </div>
+            
+            <!-- Coupon -->
+            <div class="coupon-section">
+                <input type="text" id="coupon" placeholder="Coupon Code (BHP10/BHP20)">
+                <button class="btn btn-primary" onclick="applyCoupon()">Apply Coupon</button>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div style="text-align: right; margin-top: 20px;">
+                <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+                <button class="btn btn-success" id="checkout-btn" onclick="checkout()" style="margin-left: 10px;">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer-content">
+
+            <div class="student-info">
+                <p>Student Name: Ellison | Student ID: 243190737 | Class: IT1</p>
+                <p>ICTWEB441 Student Project - BHP Ecommerce Website</p>
+            </div>
+            <div class="copyright">
+                © 2026 ICTWEB441 Student Project - All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+
+    <div class="toast-notification" id="toast-notification">
+        <i class="fas fa-shopping-cart"></i>
+        <span></span>
+    </div>
+
+<script src="../js/global.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/products.js"></script>
+<script src="../js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        #imagePreview {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+        #customer-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        #customer-table th, #customer-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        #customer-table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">
+        <img src="../images/logo.jpg" alt="BHP Logo" width="120" height="60">
+    </div>
+    <nav class="nav-main">
+        <a href="../index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="cart.html" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </a>
+        <a href="admin.html">Admin</a>
+        <a href="about.html">About Us</a>
+        <a href="support.html">Support</a>
+        <a href="feedback.html">Feedback</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>Admin Dashboard</h1>
+
+    <!-- Login/Logout Area -->
+    <div class="login-area">
+        <div id="login-box">
+            <input id="user" placeholder="Username: Ellison">
+            <input id="pwd" type="password" placeholder="Password: 123456">
+            <button class="login-btn" onclick="tryLogin()">Login</button>
+        </div>
+        <div id="logout-box" style="display:none; display:flex; gap:12px; align-items:center;">
+            <h3>Welcome Admin</h3>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <!-- Customer Registration Area (Always visible, no login required) -->
+    <div class="registration-block">
+        <h2>Customer Registration</h2>
+        <form id="customer-reg-form" onsubmit="registerCustomer(event)">
+            <input type="text" id="cust-username" name="cust-username" placeholder="Username" required><br>
+            <input type="text" id="cust-fullname" name="cust-fullname" placeholder="Full Name" required><br>
+            <input type="email" id="cust-email" name="cust-email" placeholder="Email" required><br>
+            <input type="text" id="cust-phone" name="cust-phone" placeholder="Phone" required><br>
+            <input type="password" id="cust-pwd" name="cust-pwd" placeholder="Password" required><br>
+            <button type="submit">Create Customer</button>
+        </form>
+    </div>
+
+    <!-- All admin-only functions -->
+    <div id="admin-content" style="display:none;">
+        <!-- Add Product Form -->
+        <h2>Add New Product</h2>
+        <form id="add-product-form" onsubmit="addProduct(event)" class="add-form">
+            <input type="text" id="name" name="name" placeholder="Product Name" required><br>
+            <input type="number" id="price" name="price" placeholder="Price" required><br>
+            <input type="text" id="category" name="category" placeholder="Category" required><br>
+            <input type="number" id="stock" name="stock" placeholder="Stock" required><br>
+            <input type="text" id="image" name="image" placeholder="Image URL or Filename" oninput="updatePreview()" required><br>
+            <img id="imagePreview" src="https://via.placeholder.com/150">
+            <textarea id="desc" name="desc" placeholder="Description" required></textarea><br>
+            <button type="submit">Add Product</button>
+        </form>
+
+        <!-- Cart Management -->
+        <div class="cart-management-section">
+            <h2>Cart Management</h2>
+            <div class="cart-buttons">
+                <button class="cart-btn view-cart" onclick="window.location.href='cart.html'">View Cart</button>
+                <button class="cart-btn clear-cart" onclick="clearCart()">Clear All Cart</button>
+            </div>
+        </div>
+
+        <!-- Display Registered Customer Information -->
+        <h2>Registered Customers</h2>
+        <div id="customer-list-container">
+            <table id="customer-table">
+                <thead>
+                    <tr>
+                        <th>Username</th><th>Full Name</th><th>Email</th><th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody id="customer-table-body">
+                    <tr><td colspan="4">Loading...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Product List Management -->
+        <h2>Product List</h2>
+        <div class="filter-bar">
+            <div class="category-buttons">
+                <button class="category-btn active" onclick="filterByCategory('all')">All</button>
+                <button class="category-btn" onclick="filterByCategory('Mining')">Mining</button>
+                <button class="category-btn" onclick="filterByCategory('Energy')">Energy</button>
+                <button class="category-btn" onclick="filterByCategory('Metals')">Metals</button>
+            </div>
+        </div>
+        <div id="product-grid"></div>
+    </div>
+</div>
+
+<!-- Edit Product Modal -->
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeEditModal()">&times;</span>
+        <h2>Edit Product</h2>
+        <form id="edit-form" onsubmit="updateProduct(event)">
+            <input type="hidden" id="edit-id" name="edit-id">
+            <input type="text" id="edit-name" name="edit-name" required><br>
+            <input type="number" id="edit-price" name="edit-price" required><br>
+            <input type="text" id="edit-category" name="edit-category" required><br>
+            <input type="number" id="edit-stock" name="edit-stock" required><br>
+            <input type="text" id="edit-image" name="edit-image" required><br>
+            <textarea id="edit-desc" name="edit-desc" required></textarea><br>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</div>
+
+<!-- Product Details Modal -->
+<div id="product-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeProductModal()">&times;</span>
+        <img id="modalProductImg">
+        <h3 id="modalProductName"></h3>
+        <p>Category: <span id="modalProductCategory"></span></p>
+        <p>Price: <span id="modalProductPrice"></span></p>
+        <p>Stock: <span id="modalProductStock"></span></p>
+        <p id="modalProductDesc"></p>
+        <button class="add-to-cart-btn" onclick="addToCart(currentModalProductId); closeProductModal();">Add to Cart</button>
+    </div>
+</div>
+
+<!-- Image Lightbox -->
+<div class="lightbox" id="lightbox">
+    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img">
+</div>
+
+<footer>
+    <div class="footer-content">
+        <div class="student-info">
+            <p>Student Name: Ellison | Student ID: 243190737 | Class: IT1</p>
+            <p>ICTWEB441 Student Project - BHP Ecommerce Website</p>
+        </div>
+        <div class="copyright">
+            © 2026 ICTWEB441 Student Project - All Rights Reserved
+        </div>
+    </div>
+</footer>
+
+<script src="../js/global.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/products.js"></script>
+<script src="../js/cart.js"></script>
+<script src="../js/session-storage.js"></script>
+</body>
+</html>
