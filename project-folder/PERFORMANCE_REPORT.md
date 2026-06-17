@@ -39,10 +39,10 @@ Lighthouse is used to evaluate the website across five key categories: Performan
 | Speed Index | 5.6 s | 🟡 Needs Improvement |
 
 ### Screenshots
-![alt text](<test2.png>)
+![alt text](<test2.jpg>)
 *Figure 1: Full Lighthouse audit results showing scores for Performance (73), Accessibility (77), Best Practices (100), and SEO (91).*
 
-![alt text](<test3.png>)
+![alt text](<test3.jpg>)
 *Figure 2: Core Web Vitals details, including FCP (3.4s), LCP (4.6s), TBT (0ms), CLS (0), and Speed Index (5.6s).*
 
 ### Analysis & Recommendations
@@ -86,10 +86,10 @@ The Network panel shows all resources loaded by the page, their sizes, and load 
 | **Load (full page)** | 351 ms |
 
 ### Screenshots
-![alt text](test1.png)
+![alt text](test1.jpg)
 *Figure 3: Network panel showing the loading sequence and waterfall timing. The video file (3.4 MB) takes 7.81 seconds – the single biggest performance bottleneck.*
 
-![alt text](test1.png)
+![alt text](test1.jpg)
 *Figure 4: Resource list showing all requests with name, status, type, size, and time. Most resources are served from disk cache.*
 
 ### Recommendations
