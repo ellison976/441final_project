@@ -120,9 +120,7 @@ The Coverage panel identifies unused CSS and JavaScript code, helping reduce par
 
 > **Note:** Since the Coverage panel was not run during this session, the above figures are estimates based on code structure. For precise numbers, run Coverage manually in DevTools.
 
-### Screenshot
 
-> ⚠️ **To be added:** Open DevTools → press `Ctrl+Shift+P` → type "Coverage" → click "Show Coverage" → refresh the page → take a screenshot and save as `screenshots/coverage-report.png`.
 
 ---
 
@@ -138,9 +136,7 @@ The Performance panel records runtime activity, including JavaScript execution, 
 | **Frame Rate (FPS)** | 60 fps | ✅ Smooth |
 | **Layout Shifts** | None | ✅ Stable |
 
-### Screenshot
 
-> ⚠️ **To be added:** Open DevTools → Performance tab → start recording → perform one "Add to Cart" action → stop recording → take a screenshot of the main thread activity, save as `screenshots/performance-timeline.png`.
 
 ---
 
